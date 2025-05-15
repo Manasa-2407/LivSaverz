@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Donate with Google Pay | LivSaverz</title>
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark stroke">
+                <h1> <a class="navbar-brand" href="index.html">
+                    <span class="fa fa-heart"></span> <span class="sub-logo">Liv</span>Saverz
+                    </a></h1>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Payment Page Content -->
+    <div class="container mt-5 pt-5">
+        <h2>Donate to LivSaverz via Google Pay</h2>
+        <p>Your donation helps support children's education and adoption efforts. Choose your amount and donate securely via Google Pay.</p>
+
+        <!-- Google Pay Button -->
+        <div id="googlePayButton"></div>
+
+        <script async src="https://pay.google.com/gp/p/js/pay.js"></script>
+        <script>
+            const googlePayClient = new google.payments.api.PaymentsClient({ environment: 'TEST' });
+
+            const paymentDataRequest = {
+                apiVersion: 2,
+                apiVersionMinor: 0,
+                allowedPaymentMethods: [{
+                    type: 'CARD',
+                    parameters: {
+                        allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                        allowedCardNetworks: ['MASTERCARD', 'VISA'],
+                    },
+                    tokenizationSpecification: {
+                        type: 'PAYMENT_GATEWAY',
+                        parameters: {
+                            'gateway': 'example',  // Replace with your payment gateway
+                            'gatewayMerchantId': 'exampleMerchantId',
+                        },
+                    },
+                }],
+                merchantInfo: {
+                    merchantName: 'LivSaverz',
+                    merchantId: 'exampleMerchantId',
+                },
+                transactionInfo: {
+                    totalPriceStatus: 'FINAL',
+                    totalPrice: '10.00',  // Change this based on the donation amount
+                    currencyCode: 'USD',
+                },
+            };
+
+            googlePayClient.isReadyToPay(paymentDataRequest)
+                .then(function(response) {
+                    if (response.result) {
+                        const button = googlePayClient.createButton({
+                            onClick: onGooglePayButtonClicked,
+                            buttonColor: 'black',
+                            buttonType: 'long',
+                        });
+                        document.getElementById('googlePayButton').appendChild(button);
+                    }
+                });
+
+            function onGooglePayButtonClicked() {
+                googlePayClient.loadPaymentData(paymentDataRequest)
+                    .then(function(paymentData) {
+                        // Handle the payment data and send it to your server
+                        console.log(paymentData);
+                    })
+                    .catch(function(error) {
+                        console.error('Error with Google Pay payment:', error);
+                    });
+            }
+        </script>
+    </div>
+</body>
+
+</html>
