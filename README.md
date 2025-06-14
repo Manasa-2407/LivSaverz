@@ -1,5 +1,6 @@
+# ❤️ LivSaverz – A Platform for Compassionate Giving
 # FUTURE_READY_TALENT
-Project for future ready talent
+Project for Future Ready Talent
 
 Industry : Lifestyle
 
@@ -7,7 +8,7 @@ Project Title : LivSaverz a People & Society
 
 Problem Statement/Opportunity :
 
-there are many families or our nearby society which can't afford their daily needs also their children. There are many government projects to help them but still there is no changes because of the no knowledge about the project or unreachable of the destination. therefore many children of lower class family are working instead of studying. Another problem is that many parents leave their new born child because of the financial issues they can't afford to feed a child or because of the gender of the child is not male. So many children are orphan. They also need help. If government projects were efficient then why the problem still the same. Why many children still begging.
+There are many families or our nearby society which can't afford their daily needs also their children. There are many government projects to help them but still there is no changes because of the no knowledge about the project or unreachable of the destination. therefore many children of lower class family are working instead of studying. Another problem is that many parents leave their new born child because of the financial issues they can't afford to feed a child or because of the gender of the child is not male. So many children are orphan. They also need help. If government projects were efficient then why the problem still the same. Why many children still begging.
 
 Project Description :
 I have created a donation website named LivSaverz using html, css, javascript. It will help the children for their education and also one who wanted to adopt a child can visit our website for further process. There are five tabs in my website which navigate to our website which are home, about, causes, contact and donate. Home is the main landing page of the website which contains the logo and our motto. About page is the most important part of the website which contains our blogs, helping projects, our volunteers details and many more details about the project. Causes page contains the details about the many problems that comes up and the donation details to help them. Contact page is used for any query and issues and finally Donation tab is for the donation to help who need someone's help.
