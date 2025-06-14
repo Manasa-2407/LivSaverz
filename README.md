@@ -1,4 +1,4 @@
-# future_ready_talent
+# FUTURE_READY_TALENT
 Project for future ready talent
 
 Industry : Lifestyle
